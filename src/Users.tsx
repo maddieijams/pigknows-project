@@ -42,8 +42,9 @@ export default function Users({refreshClicked, setRefreshClicked}: IProps) {
           {users.map((user: User, id: number) => (
             <Card key={id} style={{width: "15rem"}}>
               <Card.Img variant="top" src={user.picture.large} />
-              <Card.Body>
-                <Card.Title className="text-center">{`${user.name.title} ${user.name.first} ${user.name.last}`}</Card.Title>
+              <Card.Body className="text-center">
+                <Card.Title>{`${user.name.title} ${user.name.first} ${user.name.last}`}</Card.Title>
+                <Card.Text>{user.login.username}</Card.Text>
                 <Button
                   variant="primary"
                   onClick={() => {
